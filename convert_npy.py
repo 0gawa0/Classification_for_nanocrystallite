@@ -13,16 +13,10 @@ classes = [
            'shima', 'shimanashi','taisyougai'
            ]
 
-#データパス(datasetには縞模様のディレクトリ、模様なしのディレクトリ、対象外のディレクトリ、全てのデータのディレクトリの４つで構成するものとする)
+# データパス(datasetディレクトリは縞模様のディレクトリ、模様なしのディレクトリ、対象外のディレクトリ、全てのデータのディレクトリの４つで構成するものとする)
 data_basedir = f'./data_set/test'
-# セーブパス
+# 保存先のパス
 save_dir = f'./np_file'
-
-# def train_images():# 訓練画像のジェネレータ
-#     for (i,x) in enumerate(classes):
-#         images = glob('{}/{}/*.jpg'.format(data_basedir, x))
-#         for im in sorted(images):
-#             yield im,i
 
 listAll = []
 listIndex = []
@@ -42,8 +36,6 @@ print("画像ファイル数 = ",total)
 
 
 # 処理対象の訓練用の全画像をリストアップ
-# image_list (flat_list)に処理対象の画像ファイル名（ファイルパス）が入っていると仮定 
-# ImageFile.LOAD_TRUNCATED_IMAGES = True
 image_list = [item for sublist in listAll for item in sublist]
 training_list = []
 
